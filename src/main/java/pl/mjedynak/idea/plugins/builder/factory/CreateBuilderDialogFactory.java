@@ -10,12 +10,11 @@ import pl.mjedynak.idea.plugins.builder.psi.PsiHelper;
 public class CreateBuilderDialogFactory {
 
     static final String BUILDER_SUFFIX = "Builder";
-    static final String METHOD_PREFIX = "with";
+    static final String METHOD_PREFIX = "";
     private static final String DIALOG_NAME = "CreateBuilder";
     private PsiHelper psiHelper;
     private ReferenceEditorComboWithBrowseButtonFactory referenceEditorComboWithBrowseButtonFactory;
     private GuiHelper guiHelper;
-
 
     public CreateBuilderDialogFactory(PsiHelper psiHelper, ReferenceEditorComboWithBrowseButtonFactory referenceEditorComboWithBrowseButtonFactory, GuiHelper guiHelper) {
         this.psiHelper = psiHelper;
@@ -24,7 +23,7 @@ public class CreateBuilderDialogFactory {
     }
 
     public CreateBuilderDialog createBuilderDialog(PsiClass sourceClass, Project project, PsiPackage srcPackage) {
-        return new CreateBuilderDialog(project, DIALOG_NAME, sourceClass, sourceClass.getName() + BUILDER_SUFFIX, METHOD_PREFIX, srcPackage, psiHelper, guiHelper,
+        return new CreateBuilderDialog(project, DIALOG_NAME, sourceClass, BUILDER_SUFFIX, METHOD_PREFIX, srcPackage, psiHelper, guiHelper,
                 referenceEditorComboWithBrowseButtonFactory);
     }
 }

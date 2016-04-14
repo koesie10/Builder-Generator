@@ -12,8 +12,6 @@ import pl.mjedynak.idea.plugins.builder.gui.displayer.PopupDisplayer;
 import pl.mjedynak.idea.plugins.builder.psi.PsiHelper;
 import pl.mjedynak.idea.plugins.builder.verifier.BuilderVerifier;
 
-import javax.swing.JList;
-
 
 public class GoToBuilderActionHandler extends EditorActionHandler {
 
@@ -49,17 +47,18 @@ public class GoToBuilderActionHandler extends EditorActionHandler {
         if (classToGo != null) {
             psiHelper.navigateToClass(classToGo);
         } else if (!isBuilder) {
-            displayPopup(editor, psiClassFromEditor, dataContext);
+            start(editor, psiClassFromEditor, dataContext);
         }
     }
 
-    private void displayPopup(Editor editor, PsiClass psiClassFromEditor, DataContext dataContext) {
-        JList popupList = popupListFactory.getPopupList();
+    private void start(Editor editor, PsiClass psiClassFromEditor, DataContext dataContext) {
+        // JList popupList = popupListFactory.getPopupList();
         Project project = (Project) dataContext.getData(DataKeys.PROJECT.getName());
         displayChoosersRunnable.setEditor(editor);
         displayChoosersRunnable.setProject(project);
         displayChoosersRunnable.setPsiClassFromEditor(psiClassFromEditor);
-        popupDisplayer.displayPopupChooser(editor, popupList, displayChoosersRunnable);
+        // popupDisplayer.displayPopupChooser(editor, popupList, displayChoosersRunnable);
+        displayChoosersRunnable.run();
     }
 
     private PsiClass findClassToGo(PsiClass psiClassFromEditor, boolean isBuilder) {

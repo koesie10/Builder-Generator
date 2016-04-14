@@ -183,6 +183,7 @@ public class CreateBuilderDialog extends DialogWrapper {
         gbConstraints.anchor = GridBagConstraints.WEST;
 
         innerBuilder = new JCheckBox("inner");
+        innerBuilder.setSelected(true);
         innerBuilder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

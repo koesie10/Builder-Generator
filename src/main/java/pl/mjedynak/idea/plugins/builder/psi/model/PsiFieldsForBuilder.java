@@ -7,19 +7,13 @@ import java.util.List;
 
 public class PsiFieldsForBuilder {
 
-    private List<PsiField> psiFieldsForSetters;
-    private List<PsiField> psiFieldsForConstructor;
+    private List<PsiField> psiFields;
 
-    public PsiFieldsForBuilder(List<PsiField> psiFieldsForSetters, List<PsiField> psiFieldsForConstructor) {
-        this.psiFieldsForSetters = ImmutableList.copyOf(psiFieldsForSetters);
-        this.psiFieldsForConstructor = ImmutableList.copyOf(psiFieldsForConstructor);
+    public PsiFieldsForBuilder(List<PsiField> psiFields) {
+        this.psiFields = ImmutableList.copyOf(psiFields);
     }
 
-    public List<PsiField> getFieldsForSetters() {
-        return psiFieldsForSetters;
-    }
-
-    public List<PsiField> getFieldsForConstructor() {
-        return psiFieldsForConstructor;
+    public List<PsiField> getFields() {
+        return psiFields;
     }
 }

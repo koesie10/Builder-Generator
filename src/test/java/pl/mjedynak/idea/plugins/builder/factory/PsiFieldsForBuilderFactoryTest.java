@@ -48,7 +48,7 @@ public class PsiFieldsForBuilderFactoryTest {
         assertThat(result).isNotNull();
         assertThatFieldsForConstructorAreEmpty(result);
 
-        List<PsiField> fieldsForSetters = result.getFieldsForSetters();
+        List<PsiField> fieldsForSetters = result.getFields();
         assertThat(fieldsForSetters).isNotNull();
         assertThat(fieldsForSetters).hasSize(1);
         assertThat(fieldsForSetters.get(0)).isEqualTo(psiField);
@@ -96,7 +96,7 @@ public class PsiFieldsForBuilderFactoryTest {
         assertThat(result).isNotNull();
         assertThatFieldsForConstructorAreEmpty(result);
 
-        List<PsiField> fieldsForSetters = result.getFieldsForSetters();
+        List<PsiField> fieldsForSetters = result.getFields();
         assertThat(fieldsForSetters).isNotNull();
         assertThat(fieldsForSetters).hasSize(1);
         assertThat(fieldsForSetters.get(0)).isEqualTo(psiField);
@@ -110,7 +110,7 @@ public class PsiFieldsForBuilderFactoryTest {
     }
 
     private void assertThatFieldsForSettersAreEmpty(PsiFieldsForBuilder result) {
-        List<PsiField> fieldsForSetters = result.getFieldsForSetters();
+        List<PsiField> fieldsForSetters = result.getFields();
         assertThat(fieldsForSetters).isNotNull();
         assertThat(fieldsForSetters).hasSize(0);
     }

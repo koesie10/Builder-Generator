@@ -71,7 +71,7 @@ public class BuilderPsiClassBuilderTest {
         given(javaPsiFacade.getElementFactory()).willReturn(elementFactory);
         given(srcClass.getName()).willReturn(srcClassName);
         given(psiFieldsForBuilder.getFieldsForConstructor()).willReturn(psiFieldsForConstructor);
-        given(psiFieldsForBuilder.getFieldsForSetters()).willReturn(psiFieldsForSetters);
+        given(psiFieldsForBuilder.getFields()).willReturn(psiFieldsForSetters);
         context = new BuilderContext(project, psiFieldsForBuilder, targetDirectory, builderClassName, srcClass, "anyPrefix", false);
         mockCodeStyleManager();
     }

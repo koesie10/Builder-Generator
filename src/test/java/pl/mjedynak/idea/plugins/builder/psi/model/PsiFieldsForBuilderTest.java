@@ -31,14 +31,14 @@ public class PsiFieldsForBuilderTest {
 
     @Test
     public void shouldGetTwoListsOfFields() {
-        assertThat(psiFieldsForBuilder.getFieldsForSetters()).isEqualTo(psiFieldsForSetters);
+        assertThat(psiFieldsForBuilder.getFields()).isEqualTo(psiFieldsForSetters);
         assertThat(psiFieldsForBuilder.getFieldsForConstructor()).isEqualTo(psiFieldsForConstructor);
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void shouldThrowExceptionWhenTryingToModifySettersList() {
         // given
-        List<PsiField> fieldsForSetters = psiFieldsForBuilder.getFieldsForSetters();
+        List<PsiField> fieldsForSetters = psiFieldsForBuilder.getFields();
 
         // when
         fieldsForSetters.remove(0);

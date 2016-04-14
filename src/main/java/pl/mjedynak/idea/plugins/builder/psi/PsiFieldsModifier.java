@@ -13,12 +13,9 @@ public class PsiFieldsModifier {
 
     static final String FINAL = "final";
 
-    public void modifyFields(List<PsiField> psiFieldsForSetters, List<PsiField> psiFieldsForConstructor, PsiClass builderClass) {
-        for (PsiField psiFieldsForSetter : psiFieldsForSetters) {
-            removeModifiers(psiFieldsForSetter, builderClass);
-        }
-        for (PsiField psiFieldForConstructor : psiFieldsForConstructor) {
-            removeModifiers(psiFieldForConstructor, builderClass);
+    public void modifyFields(List<PsiField> psiFields, PsiClass builderClass) {
+        for (PsiField psiField : psiFields) {
+            removeModifiers(psiField, builderClass);
         }
     }
 

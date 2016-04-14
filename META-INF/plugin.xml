@@ -7,13 +7,18 @@
          Generated builder class does not use reflection, only setter methods or constructor.
          Usage:
           <ul>
-              <li>ALT+SHIFT+B inside a class.</li>
+              <li>ALT+INSERT inside a class.</li>
           </ul>
         ]]>
     </description>
-    <version>1.0.12-SNAPSHOT</version>
+    <version>1.1</version>
     <change-notes>
         <![CDATA[
+           version 1.1
+           <br/>
+           <ul>
+           <li>My version</li>
+           </ul>
            version 1.0.11
            <br/>
            <ul>
@@ -89,9 +94,7 @@
     <actions>
         <action id="GoToBuilder" class="pl.mjedynak.idea.plugins.builder.action.GoToBuilderAction"
                 text="Builder" description="Generates Builder">
-            <add-to-group group-id="GoToCodeGroup" anchor="after" relative-to-action="GotoTest"/>
-            <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="shift alt B"/>
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
     </actions>
 

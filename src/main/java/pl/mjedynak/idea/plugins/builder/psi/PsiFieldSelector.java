@@ -40,9 +40,6 @@ public class PsiFieldSelector {
     }
 
     private boolean isAppropriate(PsiClass psiClass, PsiField psiField) {
-        return psiFieldVerifier.isSetInSetterMethod(psiField, psiClass) || psiFieldVerifier.isSetInConstructor(psiField, psiClass);
-
+        return true;
     }
-
-
 }
